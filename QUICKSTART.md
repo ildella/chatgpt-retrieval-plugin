@@ -42,5 +42,11 @@ poetry run start
 To add new dependencies to the pyproject.toml file, you need to run poetry lock and poetry install to update the lock file and install the new dependencies.
 
 
-## Use it
+## Try it
 
+```shell
+curl -X POST localhost:8000/upsert   -H "Authorization: Bearer $BEARER_TOKEN"   -H "Content-type: application/json"  -d '{"documents": [{"id": "doc1", "text": "Hello world", "metadata": {"source_id": "12345", "source": "file"}}, {"text": "How are you?", "metadata": {"source_id": "23456"}}]}'
+
+## you will get a 200 with a response like this:
+## {"ids":["doc1","f09731f9-3c14-4f1f-bacb-c032b4a3cee1"]}
+```
