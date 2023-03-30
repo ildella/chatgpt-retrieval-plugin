@@ -50,3 +50,14 @@ curl -X POST localhost:8000/upsert   -H "Authorization: Bearer $BEARER_TOKEN"   
 ## you will get a 200 with a response like this:
 ## {"ids":["doc1","f09731f9-3c14-4f1f-bacb-c032b4a3cee1"]}
 ```
+
+Now upsert a whole file called "parsed.txt" that you have in the same folder:
+
+```shell
+curl -X "POST" \
+  "http://localhost:8000/upsert-file" \
+  -H "accept: application/json" \
+  -H "Authorization: Bearer $BEARER_TOKEN" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@parsed.txt;type=text/plain"
+```
