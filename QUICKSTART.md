@@ -28,13 +28,15 @@ export BEARER_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaWxkZWxsYS
 Then start it:
 
 ```shell
-source .env
-start-redis.sh
+# start-redis.sh
 
-pip install poetry
-poetry env use python3.10
-poetry shell
+# pip install poetry
+# poetry env use python3.10
+# poetry shell
+
+./quickstart.sh
 poetry install
+source .env
 
 poetry run start
 ```
